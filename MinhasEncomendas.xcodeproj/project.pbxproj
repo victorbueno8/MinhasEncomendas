@@ -14,6 +14,7 @@
 		57E21A3B2586A7EA008F3F7D /* MinhasEncomendas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57E21A392586A7EA008F3F7D /* MinhasEncomendas.xcdatamodeld */; };
 		57E21A3D2586A7F1008F3F7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E21A3C2586A7F1008F3F7D /* Assets.xcassets */; };
 		57E21A402586A7F2008F3F7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E21A3E2586A7F2008F3F7D /* LaunchScreen.storyboard */; };
+		57E21A4A2586AE0E008F3F7D /* ListarPedidosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E21A492586AE0E008F3F7D /* ListarPedidosTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		57E21A3C2586A7F1008F3F7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57E21A3F2586A7F2008F3F7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57E21A412586A7F2008F3F7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57E21A492586AE0E008F3F7D /* ListarPedidosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListarPedidosTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				57E21A302586A7EA008F3F7D /* AppDelegate.swift */,
 				57E21A322586A7EA008F3F7D /* SceneDelegate.swift */,
 				57E21A342586A7EA008F3F7D /* ViewController.swift */,
+				57E21A492586AE0E008F3F7D /* ListarPedidosTableViewController.swift */,
 				57E21A362586A7EA008F3F7D /* Main.storyboard */,
 				57E21A3C2586A7F1008F3F7D /* Assets.xcassets */,
 				57E21A3E2586A7F2008F3F7D /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			files = (
 				57E21A352586A7EA008F3F7D /* ViewController.swift in Sources */,
 				57E21A312586A7EA008F3F7D /* AppDelegate.swift in Sources */,
+				57E21A4A2586AE0E008F3F7D /* ListarPedidosTableViewController.swift in Sources */,
 				57E21A3B2586A7EA008F3F7D /* MinhasEncomendas.xcdatamodeld in Sources */,
 				57E21A332586A7EA008F3F7D /* SceneDelegate.swift in Sources */,
 			);
