@@ -59,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="-563" y="57"/>
         </scene>
-        <!--View Controller-->
+        <!--Pedido-->
         <scene sceneID="bML-Gw-Tcy">
             <objects>
-                <viewController id="FzO-hM-tCu" sceneMemberID="viewController">
+                <viewController id="FzO-hM-tCu" customClass="ViewController" customModule="MinhasEncomendas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aWQ-a6-ODZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,20 +93,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Loja" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CVJ-gN-OVh">
-                                <rect key="frame" x="20" y="182.5" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="loja:" destination="l4u-t9-Vmz" eventType="editingDidEnd" id="7zI-5h-fcg"/>
-                                </connections>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descrição" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cGo-FG-tod">
                                 <rect key="frame" x="20" y="549.5" width="374" height="34"/>
                                 <nil key="textColor"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="descricao:" destination="l4u-t9-Vmz" eventType="editingDidEnd" id="xSn-x0-sbg"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Loja" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CVJ-gN-OVh">
+                                <rect key="frame" x="20" y="182" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="loja:" destination="l4u-t9-Vmz" eventType="editingDidEnd" id="7zI-5h-fcg"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -133,9 +133,19 @@
                             <constraint firstItem="ZOL-Vj-nVw" firstAttribute="trailing" secondItem="cGo-FG-tod" secondAttribute="trailing" constant="20" id="zNw-fu-ZWU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="nka-G4-qCZ">
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="B35-Ny-Qwn"/>
+                    <navigationItem key="navigationItem" title="Pedido" id="nka-G4-qCZ">
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="B35-Ny-Qwn">
+                            <connections>
+                                <action selector="salvar:" destination="FzO-hM-tCu" id="BwJ-vP-vzM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descricao" destination="cGo-FG-tod" id="Ro5-wg-TAS"/>
+                        <outlet property="loja" destination="CVJ-gN-OVh" id="z01-zK-WJV"/>
+                        <outlet property="pedido" destination="wbT-eU-hDz" id="SYc-Oe-A5u"/>
+                        <outlet property="previsao" destination="KA9-K9-j5d" id="c35-Au-gwW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xc0-ly-7Dm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="l4u-t9-Vmz" userLabel="Exit" sceneMemberID="exit"/>
@@ -165,7 +175,7 @@
         <!--Pedido-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MinhasEncomendas" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="UISplitViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

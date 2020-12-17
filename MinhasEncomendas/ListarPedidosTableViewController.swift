@@ -62,8 +62,8 @@ class ListarPedidosTableViewController: UITableViewController {
         dateFormatter.dateFormat = "dd/MM/yyyy"
         let novaPrevisao = dateFormatter.string(from: previsaoListada as! Date)
         
-        cell.textLabel?.text = String(describing: tituloPedidoListado)
-        cell.detailTextLabel?.text = String(describing: novaPrevisao)
+        cell.textLabel?.text = tituloPedidoListado as? String
+        cell.detailTextLabel?.text = String(describing: "Previsto para " + novaPrevisao)
 
         return cell
     }

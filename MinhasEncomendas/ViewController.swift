@@ -12,11 +12,10 @@ class ViewController: UIViewController {
     var context : NSManagedObjectContext!
     var pedidoObj : NSManagedObject!
 
-    @IBOutlet weak var pedido: UILabel!
-    @IBOutlet weak var loja: UILabel!
-    @IBOutlet weak var data: UILabel!
-    @IBOutlet weak var previsao: UILabel!
-    @IBOutlet weak var descricao: UILabel!
+    @IBOutlet weak var pedido: UITextField!
+    @IBOutlet weak var loja: UITextField!
+    @IBOutlet weak var previsao: UIDatePicker!
+    @IBOutlet weak var descricao: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +27,8 @@ class ViewController: UIViewController {
             if let lojaRec = pedidoObj.value(forKey: "loja") {
                 self.loja.text = String(describing: lojaRec)
             }
-            if let dataRec = pedidoObj.value(forKey: "data") {
-                self.data.text = String(describing: dataRec)
-            }
             if let previsaoRec = pedidoObj.value(forKey: "previsao") {
-                self.previsao.text = String(describing: previsaoRec)
+                self.previsao.date = previsaoRec as! Date
             }
             if let descricaoRec = pedidoObj.value(forKey: "descricao") {
                 self.descricao.text = String(describing: descricaoRec)
@@ -42,7 +38,34 @@ class ViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
     }
-
+    
+    
+    @IBAction func salvar(_ sender: Any) {
+        if pedidoObj == nil {
+            self.salvarPedido()
+        }
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func salvarPedido() {
+        let novoPedido = NSEntityDescription.insertNewObject(forEntityName: "Pedidos", into: context)
+        
+        novoPedido.setValue(self.pedido.text, forKey: "pedido")
+        novoPedido.setValue(self.loja.text, forKey: "loja")
+        novoPedido.setValue(self.previsao.date, forKey: "previsao")
+        novoPedido.setValue(self.descricao.text, forKey: "descricao")
+        novoPedido.setValue(Date(), forKey: "data")
+        novoPedido.setValue(false, forKey: "recebido")
+        
+        do {
+            try context.save()
+            print("Pedido salvo com sucesso!")
+        } catch let erro {
+            print("Erro ao salvar pedido: \(erro.localizedDescription)")
+        }
+    }
+    
 
 }
 
