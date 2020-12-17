@@ -43,6 +43,8 @@ class ViewController: UIViewController {
     @IBAction func salvar(_ sender: Any) {
         if pedidoObj == nil {
             self.salvarPedido()
+        } else {
+            self.atualizarPedido()
         }
         
         self.navigationController?.popViewController(animated: true)
@@ -63,6 +65,21 @@ class ViewController: UIViewController {
             print("Pedido salvo com sucesso!")
         } catch let erro {
             print("Erro ao salvar pedido: \(erro.localizedDescription)")
+        }
+    }
+    
+    func atualizarPedido(){
+        pedidoObj.setValue(self.pedido.text, forKey: "pedido")
+        pedidoObj.setValue(self.loja.text, forKey: "loja")
+        pedidoObj.setValue(self.previsao.date, forKey: "previsao")
+        pedidoObj.setValue(self.descricao.text, forKey: "descricao")
+        pedidoObj.setValue(Date(), forKey: "data")
+        
+        do {
+            try context.save()
+            print("Sucesso ao atualizar pedido")
+        } catch let erro {
+            print("Erro ao atualizar pedido: \(erro.localizedDescription)")
         }
     }
     
