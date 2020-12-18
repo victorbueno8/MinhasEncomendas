@@ -286,7 +286,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Pedido" id="2m3-G0-rfi">
-                        <barButtonItem key="rightBarButtonItem" title="Editar" image="pencil" catalog="system" id="ItA-dV-EQ9"/>
+                        <barButtonItem key="rightBarButtonItem" title="Editar" image="pencil" catalog="system" id="ItA-dV-EQ9">
+                            <connections>
+                                <segue destination="FzO-hM-tCu" kind="show" identifier="editPedido" id="Dxv-CW-WRZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="data" destination="r2o-jb-yzj" id="TeO-Z1-1jb"/>
@@ -302,6 +306,9 @@
             <point key="canvasLocation" x="206" y="418"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Dxv-CW-WRZ"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">

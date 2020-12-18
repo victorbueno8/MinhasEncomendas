@@ -47,7 +47,7 @@ class ViewController: UIViewController {
             self.atualizarPedido()
         }
         
-        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     func salvarPedido() {
