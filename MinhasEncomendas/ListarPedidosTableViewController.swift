@@ -26,10 +26,10 @@ class ListarPedidosTableViewController: UITableViewController {
     
     func pegarPedidos() {
         let requisicao = NSFetchRequest<NSFetchRequestResult>(entityName: "Pedidos")
-        // todo: ordenar por recebido ou nao tambem
-        let order = NSSortDescriptor(key: "previsao", ascending: true)
+        let orderStatus = NSSortDescriptor(key: "recebido", ascending: true)
+        let orderDate = NSSortDescriptor(key: "previsao", ascending: true)
         
-        requisicao.sortDescriptors = [order]
+        requisicao.sortDescriptors = [orderStatus,orderDate]
         
         do {
             let pedidosLista = try context.fetch(requisicao)
@@ -57,6 +57,7 @@ class ListarPedidosTableViewController: UITableViewController {
         let pedido = self.pedidos[indexPath.row]
         let tituloPedidoListado = pedido.value(forKey: "pedido")
         let previsaoListada = pedido.value(forKey: "previsao")
+        let recebidoListado = pedido.value(forKey: "recebido")
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
@@ -64,6 +65,12 @@ class ListarPedidosTableViewController: UITableViewController {
         
         cell.textLabel?.text = tituloPedidoListado as? String
         cell.detailTextLabel?.text = String(describing: "Previsto para " + novaPrevisao)
+        
+        if recebidoListado as! Bool == true {
+            cell.contentView.backgroundColor = UIColor.systemGreen
+            cell.textLabel?.textColor = UIColor.white
+            cell.detailTextLabel?.textColor = UIColor.white
+        }
 
         return cell
     }

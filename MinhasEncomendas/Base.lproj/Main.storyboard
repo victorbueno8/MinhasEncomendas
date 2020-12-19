@@ -247,6 +247,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gc5-xw-scL">
+                                <rect key="frame" x="20" y="803" width="374" height="39"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Recebido">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="receberPedido:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1K8-KO-raj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -256,6 +267,7 @@
                             <constraint firstItem="cTp-WJ-gUF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4Im-xR-1Q1"/>
                             <constraint firstItem="LeT-Ty-KvD" firstAttribute="top" secondItem="cTp-WJ-gUF" secondAttribute="bottom" constant="30" id="52E-Z8-1Bw"/>
                             <constraint firstItem="adc-NQ-oCa" firstAttribute="top" secondItem="PV3-HP-PTx" secondAttribute="bottom" constant="30" id="5fd-LA-xwi"/>
+                            <constraint firstItem="gc5-xw-scL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="77j-jL-JXW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="laR-6i-4sD" secondAttribute="trailing" constant="20" id="7Uu-2a-Jr9"/>
                             <constraint firstItem="adc-NQ-oCa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="BFh-DN-1Zy"/>
                             <constraint firstItem="IJK-Sm-inS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="C7s-R5-oRa"/>
@@ -275,12 +287,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zat-Eg-ZK4" secondAttribute="trailing" constant="20" id="fbR-7r-r1h"/>
                             <constraint firstItem="laR-6i-4sD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="i8A-sw-tKC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="adc-NQ-oCa" secondAttribute="trailing" constant="20" id="ijf-Y6-Z3d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gc5-xw-scL" secondAttribute="trailing" constant="20" id="jS4-NV-thG"/>
                             <constraint firstItem="zat-Eg-ZK4" firstAttribute="top" secondItem="laR-6i-4sD" secondAttribute="bottom" constant="30" id="kMX-4L-LJm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PV3-HP-PTx" secondAttribute="trailing" constant="20" id="m3h-SG-5Pw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZqY-aL-Dd5" secondAttribute="trailing" constant="20" id="mBY-xZ-wYl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FVl-kD-TMK" secondAttribute="trailing" constant="20" id="nL0-tc-TNA"/>
                             <constraint firstItem="laR-6i-4sD" firstAttribute="top" secondItem="IJK-Sm-inS" secondAttribute="bottom" constant="5" id="qtw-tb-GJu"/>
                             <constraint firstItem="PV3-HP-PTx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="qzo-nw-Ije"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gc5-xw-scL" secondAttribute="bottom" constant="20" id="tY0-qb-u75"/>
                             <constraint firstItem="r2o-jb-yzj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tYJ-PB-icg"/>
                             <constraint firstItem="FVl-kD-TMK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="waf-nB-qrL"/>
                         </constraints>
@@ -298,6 +312,7 @@
                         <outlet property="loja" destination="PV3-HP-PTx" id="Bmz-gx-eXo"/>
                         <outlet property="pedido" destination="ZqY-aL-Dd5" id="Y24-Ih-bkl"/>
                         <outlet property="previsao" destination="laR-6i-4sD" id="KJq-f6-FEb"/>
+                        <outlet property="recebido" destination="gc5-xw-scL" id="6T0-sH-WiG"/>
                         <outlet property="status" destination="FVl-kD-TMK" id="YeA-lU-S5x"/>
                     </connections>
                 </viewController>
@@ -307,12 +322,15 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Dxv-CW-WRZ"/>
+        <segue reference="N2Q-zJ-0pu"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

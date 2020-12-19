@@ -18,6 +18,7 @@ class DetalhesViewController: UIViewController {
     @IBOutlet weak var previsao: UILabel!
     @IBOutlet weak var descricao: UILabel!
     @IBOutlet weak var status: UILabel!
+    @IBOutlet weak var recebido: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,7 @@ class DetalhesViewController: UIViewController {
             }
             if pedidoObj.value(forKey: "recebido") as! Bool == true {
                 self.status.text = "Recebido"
+                self.recebido.isHidden = true
             } else {
                 self.status.text = "A caminho"
             }
@@ -53,9 +55,19 @@ class DetalhesViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    @IBAction func receberPedido(_ sender: Any) {
+        pedidoObj.setValue(true, forKey: "recebido")
         
+        do {
+            try context.save()
+            print("Sucesso ao receber pedido")
+        } catch let erro {
+            print("Erro ao receber pedido: \(erro.localizedDescription)")
+        }
+        
+        self.navigationController?.popToRootViewController(animated: true)
     }
+    
 
     // MARK: - Navigation
 
